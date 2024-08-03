@@ -10,15 +10,3 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-[data-component="elastic-line"] {
-  display: flex;
-}
-
-[data-component="elastic-line"] svg {
-  cursor: arrow;
-}
-
-[data-component="elastic-line"][data-direction="vertical"] {
-  transform: rotate(-90deg);
-}

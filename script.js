@@ -1,4 +1,28 @@
 function init() {
+  function addStyle(styleString) {
+    const style = document.createElement("style");
+    style.textContent = styleString;
+    document.head.append(style);
+  }
+
+  addStyle(`
+    [data-component="elastic-line"] {
+      display: flex;
+    }
+  `);
+
+  addStyle(`
+    [data-component="elastic-line"] svg {
+      cursor: arrow;
+    }
+  `);
+
+  addStyle(`
+    [data-component="elastic-line"][data-direction="vertical"] {
+      transform: rotate(-90deg);
+    }
+  `);
+
   document
     .querySelectorAll(`[data-component="elastic-line"]`)
     .forEach((component) => {
