@@ -6,38 +6,38 @@ function init() {
   }
 
   addStyle(`
-    [data-component="elastic-line"] {
+    [Af-line-animation="elastic"] {
       display: flex;
     }
   `);
 
   addStyle(`
-    [data-component="elastic-line"] svg {
+    [Af-line-animation="elastic"] svg {
       cursor: arrow;
     }
   `);
 
   addStyle(`
-    [data-component="elastic-line"][data-direction="vertical"] {
+    [Af-line-animation="elastic"][Af-line-direction="vertical"] {
       transform: rotate(-90deg);
     }
   `);
 
   document
-    .querySelectorAll(`[data-component="elastic-line"]`)
+    .querySelectorAll(`[Af-line-animation="elastic"]`)
     .forEach((component) => {
       component.innerHTML = `
     <svg width="${component.getAttribute(
-      "data-width"
+      "Af-line-width"
     )}" height="300" viewbox="0 0 400 300">
       <path
         class="elastic-line-component-curve"
         d="M10,150 Q200,150 ${
-          Number(component.getAttribute("data-width")) - 10
+          Number(component.getAttribute("Af-line-width")) - 10
         },150"
         fill="none"
-        stroke="${component.getAttribute("data-color")}"
-        stroke-width="${component.getAttribute("data-size")}"
+        stroke="${component.getAttribute("Af-line-color")}"
+        stroke-width="${component.getAttribute("Af-line-size")}"
       />
     </svg>
     `;
@@ -48,7 +48,7 @@ function init() {
         svgTop,
         svgLeft;
 
-      const direction = component.getAttribute("data-direction");
+      const direction = component.getAttribute("Af-line-direction");
 
       function elasticLineComponentInit() {
         svgElement = component.querySelector("svg");
